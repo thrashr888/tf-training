@@ -6,6 +6,7 @@ resource "aws_instance" "web" {
   ami="ami-c58c1dd3"
   instance_type = "t2.micro"
   security_groups = ["sg-ac29cfc5"]
+  key_name = "vastermonster"
 
   tags {
     Name = "Hello World"
