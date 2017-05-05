@@ -2,6 +2,7 @@ terraform {
   backend "atlas" {
     name = "pthrasher/training"
   }
+  required_version = "> 0.9.3"
 }
 
 provider "aws" {
