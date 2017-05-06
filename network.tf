@@ -124,21 +124,21 @@ resource "aws_security_group" "default_group" {
     from_port       = 0
     to_port         = 65535
     protocol        = "tcp"
-    security_groups = ["sg-ac29cfc5"]
+    self = true
   }
 
   ingress {
     from_port       = 0
     to_port         = 65535
     protocol        = "udp"
-    security_groups = ["sg-ac29cfc5"]
+    self = true
   }
 
   # ingress {
   #   from_port       = 0
   #   to_port         = 65535
   #   protocol        = "icmp"
-  #   security_groups = ["sg-ac29cfc5"]
+  #   self = true
   # }
 
   # SSH
