@@ -12,7 +12,7 @@ provider "aws" {
 resource "aws_instance" "web" {
   ami             = "ami-c58c1dd3"
   instance_type   = "t2.micro"
-  security_groups = ["${aws_security_group.default_group.id}"]
+  security_groups = ["${aws_default_security_group.default.id}"]
   key_name        = "vastermonster"
   subnet_id       = "${aws_subnet.MainA.id}"
 
