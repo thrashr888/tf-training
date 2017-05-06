@@ -137,7 +137,7 @@ resource "aws_security_group" "default_group" {
   ingress {
     from_port       = 0
     to_port         = 65535
-    protocol        = "imcp"
+    protocol        = "icmp"
     security_groups = ["sg-ac29cfc5"]
   }
 
