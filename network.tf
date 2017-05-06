@@ -134,12 +134,12 @@ resource "aws_security_group" "default_group" {
     security_groups = ["sg-ac29cfc5"]
   }
 
-  ingress {
-    from_port       = 0
-    to_port         = 65535
-    protocol        = "IMCP"
-    security_groups = ["sg-ac29cfc5"]
-  }
+  # ingress {
+  #   from_port       = 0
+  #   to_port         = 65535
+  #   protocol        = "IMCP"
+  #   security_groups = ["sg-ac29cfc5"]
+  # }
 
   # SSH
   ingress {
