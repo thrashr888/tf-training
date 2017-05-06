@@ -62,9 +62,9 @@ resource "aws_internet_gateway" "Main" {
   }
 }
 
-resource "aws_egress_only_internet_gateway" "egress" {
-  vpc_id = "${aws_vpc.test_vpc.id}"
-}
+# resource "aws_egress_only_internet_gateway" "egress" {
+#   vpc_id = "${aws_vpc.test_vpc.id}"
+# }
 
 resource "aws_route" "Main" {
   route_table_id         = "${aws_route_table.Main.id}"
