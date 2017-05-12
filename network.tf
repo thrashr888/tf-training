@@ -69,11 +69,10 @@ resource "aws_internet_gateway" "Main" {
 resource "aws_route" "Main" {
   route_table_id         = "${aws_route_table.Main.id}"
   destination_cidr_block = "0.0.0.0/0"
-  
+
   #   destination_ipv6_cidr_block  = "::/0"
   #   egress_only_gateway_id = "${aws_egress_only_internet_gateway.egress.id}"
 }
-
 
 resource "aws_route_table" "Main" {
   vpc_id = "${aws_vpc.test_vpc.id}"
@@ -121,17 +120,17 @@ resource "aws_security_group" "default_group" {
   description = "default group"
 
   ingress {
-    from_port       = 0
-    to_port         = 65535
-    protocol        = "tcp"
-    self = true
+    from_port = 0
+    to_port   = 65535
+    protocol  = "tcp"
+    self      = true
   }
 
   ingress {
-    from_port       = 0
-    to_port         = 65535
-    protocol        = "udp"
-    self = true
+    from_port = 0
+    to_port   = 65535
+    protocol  = "udp"
+    self      = true
   }
 
   # ingress {
@@ -148,7 +147,6 @@ resource "aws_security_group" "default_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
   # HTTP
   ingress {
     from_port   = 80
@@ -156,7 +154,6 @@ resource "aws_security_group" "default_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
   # HTTPS
   ingress {
     from_port   = 443
@@ -164,7 +161,6 @@ resource "aws_security_group" "default_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
   # MySQL
   ingress {
     from_port   = 3306
@@ -172,7 +168,6 @@ resource "aws_security_group" "default_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
   # PostgreSQL
   ingress {
     from_port   = 5432
@@ -223,4 +218,16 @@ resource "aws_default_security_group" "default" {
   tags {
     Name = "All Open"
   }
+}
+
+output "subnet_id" {
+  value = "${aws_subnet.MainA.id}"
+}
+
+output "vpc_id" {
+  value = "${aws_vpc.test_vpc.id}"
+}
+
+output "security_group_id" {
+  value = "${aws_security_group.default_group.id}"
 }
