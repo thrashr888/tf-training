@@ -3,7 +3,7 @@ terraform {
     name = "pthrasher/training"
   }
 
-  required_version = "> 0.9.3"
+  required_version = ">= 0.9.5"
 }
 
 provider "atlas" {}
