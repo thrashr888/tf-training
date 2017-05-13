@@ -1,0 +1,430 @@
+/*
+    Main.CSS
+
+    Paul Thrasher's Portfolio
+    PaulThrasher.com
+    © 2006 Paul Thrasher
+
+----------------------------------
+
+    Table of Contents
+
+    =tags
+    =layout
+    =about
+    =portfolio
+    =resume
+    =news
+    =contact
+
+-----------------------------------
+
+*/
+
+/*
+
+    TAGS
+
+*/
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #333333;
+    font-size: 10pt;
+}
+a{
+    color:#333;
+    /*text-decoration:none;*/
+}
+a:hover{
+    color:#999;
+    /*text-decoration:none;*/
+}
+a img{
+    border:none;
+}
+p{
+    margin-bottom:1em;
+}
+ul{
+    list-style:none;
+}
+h2{
+    display:block;
+    color:#B8D1D1;
+    margin:1em -0.5em;
+    font-size:12pt;
+    padding:1em 2em;
+
+    background-image: url(../img/bg-subhead2.gif);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+h3{
+    color:#01bdbd;
+    margin-bottom:0.5em;
+}
+.hide{
+    display:none;
+}
+.clr,
+.clear{
+    clear:both;
+}
+
+/*
+
+    LAYOUT
+
+*/
+#page{
+
+}
+#pageHeader{
+    background-image:url(../img/bg-header.gif);
+    background-color: #000000;
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    color:#488787;
+    padding:3em 1em 2em 5.5em;
+    position:fixed;
+    width:100%;
+    top: 0px;
+    z-index:11;
+}
+#pageNav{
+    background-image:url(../img/bg-nav.gif);
+    background-color: #000000;
+    background-repeat: repeat-x;
+    background-position: center top;
+    height:31px;
+    padding-left:4em;
+    position:fixed;
+    width:100%;
+    top: 95px;
+    z-index:10;
+}
+#pageFooter{
+    background-image:url(../img/bg-footer.gif);
+    background-color: #000000;
+    background-repeat: repeat-x;
+    background-position: center top;
+    color:#488787;
+    padding:3em 5em;
+    font-size:8pt;
+}
+#pageContent{
+    width:500px;
+    padding:3em 0em 3em 5em;
+    margin:120px 0px 0px;
+}
+.area{
+    clear:both;
+    margin:1em;
+    padding:1em 0em;
+}
+.resumeSection,
+#URLs li{
+    float:left;
+    width:150px;
+    text-align:center;
+}
+#spiderWeb{
+    position:absolute;
+    right:50px;
+    top:125px;
+}
+#spiderBody{
+    position:fixed;
+    right:61px;
+    top:-100px;
+}
+
+
+/*
+
+    NAVIGATION
+
+*/
+#pageNav{
+}
+#pageNav li{
+    float:left;
+    padding:0.5em 1em;
+}
+#pageNav li a{
+    text-decoration:none;
+    font-weight:bold;
+    color:#01bdbd;
+    padding:0.5em 1em;
+    cursor:pointer;
+}
+#pageNav li a:hover{
+    text-decoration:underline;
+}
+#backToTop{
+    display:none;
+}
+
+
+
+/*
+
+    ABOUT
+
+*/
+#about{
+    padding-top:0em;
+}
+#thePhoto{
+    padding:0em 2em 0.5em 0em;
+}
+#theSignature{
+    padding:0em 2em 0em 0.5em;
+}
+
+
+/*
+
+    PORTFOLIO
+
+*/
+#portfolio{
+    margin-top:0.25em;
+}
+.portfolioSection h3{
+    clear:none;
+    font-size:10pt;
+    margin:0.5em 0em 0em;
+}
+.portfolioSection{
+    float:left;
+    text-align:left;
+    margin:1em 2em;
+}
+.portfolioSection li{
+    float:left;
+    text-align:left;
+    padding-right:0.5em;
+    white-space:normal;
+}
+.portfolioSection li.header{
+    font-weight:bold;
+    color:#01bdbd;
+    border-left:0px solid #ccc;
+    padding-right:0.5em;
+}
+.portfolioSection a{
+    cursor:pointer;
+    color:#777;
+}
+.portfolioSection a:hover{
+    color:#000;
+    text-decoration:underline;
+}
+.portfolioSection a:active{
+    text-decoration:none;
+    background-color:#ffa;
+    color:#000;
+}
+.role{
+    margin-left:0.5em;
+    font-style:italic;
+    color:#999;
+}
+
+#thePiece{
+    text-align:center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../img/spinner.gif);
+}
+#thePieceFrame{
+    z-index:5;
+    width:487px;
+    margin:0px 0px 0px;
+    height:252px;
+    position:relative;
+}
+#thePieceImage{
+    z-index:0;
+    width:465px;
+    height:230px;
+    padding:0px 3px 0px;
+    margin-top:-230px;
+    position:relative;
+    left:3px;
+    vertical-align: top;
+}
+#theDescription{
+    height:60px;
+    margin:0px 2em;
+    padding:0.5em;
+}
+#theDescription a{
+    color: #999;
+}
+#theDescription a:hover{
+    color: #000;
+}
+
+
+/*
+
+    RESUME
+
+*/
+#resume{
+    margin-top:1em;
+    padding-top:1em;
+}
+#URLs.resumeSection{
+    width:auto;
+}
+#URLs{
+    margin:0em 0em 2em 3em;
+    text-align:left;
+}
+#URLs li{
+    text-align:left;
+    width:135px;
+}
+#downloadSection{
+    clear:left;
+    margin-top:1.5em;
+    color:#01bdbd;
+    text-align:center;
+
+    background-image: url(../img/bg-download2.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#downloadSection a{
+    color:#01bdbd;
+    text-decoration:none;
+}
+#downloadSection a img{
+    vertical-align: middle;
+}
+#downloadSection a:hover{
+    text-decoration:underline;
+}
+.pending{
+    color:#aaa;
+    font-style:italic;
+    font-size:8pt;
+    padding-left:0.5em;
+}
+
+
+
+/*
+
+    NEWS
+
+*/
+#news{
+}
+#news h3{
+    font-size:18pt;
+}
+#news h3 a{
+    color:#01bdbd;
+}
+#news h3 a:hover{
+    color:#01bdbd;
+}
+#news .newsPost{
+  margin-bottom: 1em;
+}
+.postDate{
+    display:inline;
+    float:left;
+    margin:0.5em 1em 0.5em 0.5em;
+    background-image: url(../img/bg-date.gif);
+    background-repeat: no-repeat;
+    background-position: center top;
+    height:49px;
+    width:45px;
+    text-align:center;
+    padding-top:4px;
+    font-weight:bold;
+}
+.postYear{
+    padding-top:5px;
+}
+.postMonth{
+    font-size:8pt;
+    margin-bottom:-3px;
+}
+.postDay{
+    font-size:17pt;
+    padding-top:-1px;
+}
+
+/*
+
+    CONTACT
+
+*/
+#contact{
+}
+fieldset{
+    border:none;
+    padding:1em;
+    margin:2em 3em 2em 2em;
+    border-top:1px solid #E9FFFF;
+    border-bottom:1px solid #E9FFFF;
+    background-color:#F0FBFB;
+}
+legend{
+    display:none;
+}
+#emailResponse{
+    color:#555;
+    font-size:14pt;
+    margin-bottom:0.5em;
+    padding-bottom:0.5em;
+}
+
+/*
+
+    FOOTER
+
+*/
+#pageFooter a{
+    color:#488787;
+}
+#pageFooter a:hover{
+    color:#999;
+}
+
+/*
+
+    SAFARI HACKS
+
+*/
+#thePieceImage{
+    top:-10px;
+}
+h2 a{
+    float:right;
+    display:inline;
+    font-size:8pt;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#B8D1D1;
+    text-decoration:underline;
+    margin-top:0em;
+    cursor:pointer;
+}
+.breakSafari{top:-20px;#}
+#thePieceImage{
+    top:-0px;
+}
+h2 a{
+    margin-top:-1.5em;
+}
+

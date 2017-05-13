@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Paul Thrasher's Portfolio</title>
+
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+
+    <script src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" language="JavaScript">
+    <!--
+        google.load("prototype", "1.6");
+        google.load("scriptaculous", "1.8.1");
+    //-->
+    </script>
+    <script type="text/javascript" src="js/images.js"></script>
+
+    <script type="text/javascript" language="JavaScript">
+    <!--
+        function writeEMap() {
+            start="to:pau";mid="l@pault";end="hrasher.";
+            document.write("<area shape=\"rect\" coords=\"201,73,445,117\" href=\"mail"+start+mid+end+"com\" />");
+        }
+        function writeEAddress(thetext) {
+            start="to:pau";
+            mid="l@pault";
+            end="hrasher.";
+            document.write("<a href='mail"+start+mid+end+"com'>"+thetext+"</a>");
+        }
+        function theClick(id,el)
+        {
+            new Ajax.Updater('portfolioPiece','lib/ajax.php?id='+id,{asynchronous:true,evalScripts:true});
+            new Effect.Highlight(el);
+        }
+        function preloadImages()
+        {
+            var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+            var i,j=d.MM_p.length,a=preloadImages.arguments; for(i=0; i<a.length; i++)
+            if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+        }
+    //-->
+    </script>
+
+</head>
+
+<body onload="preloadImages('img/screens/ss-logos.gif','img/screens/ss-logos2.gif','img/screens/ss-40deals.gif','img/screens/ss-calder.gif','img/screens/ss-faucet.gif','img/screens/ss-fnot.gif','img/screens/ss-fnotfeature.gif','img/screens/ss-fonts2.gif','img/screens/ss-fonts3.gif','img/screens/ss-fonts4.gif','img/screens/ss-fonts.gif','img/screens/ss-home2.gif','img/screens/ss-home.gif','img/screens/ss-ideasdatabase.gif','img/screens/ss-lucidboy.gif','img/screens/ss-peachkit.gif','img/screens/ss-renew.gif','img/screens/ss-renew_video.gif','img/screens/ss-tracker.gif','img/screens/ss-transmitter.gif','img/screens/ss-conrads.jpg','img/screens/ss-farallones.jpg','img/screens/ss-forkintheroad.jpg','img/screens/ss-icarus.jpg','img/screens/ss-marsvolta.jpg')">
+
+<div id="page">
+
+    <div class="hide">
+        <a href="#about">Skip To Content</a>
+    </div>
+
+    <div id="spider">
+        <img src="img/spider-web.gif" alt="spider web" name="spiderWeb" width="50" height="18" border="0" id="spiderWeb" />
+        <img src="img/spider-body.gif" alt="spider body" name="spiderBody" width="25" height="577" border="0" id="spiderBody" />
+    </div>
+
+    <div id="pageHeader">
+        <h1><img src="img/logo2.gif" alt="logo" width="292" height="29" border="0" /><!--Paul Thrasher | New Media--></h1>
+    </div>
+
+    <ul id="pageNav">
+        <li><a onclick="new Effect.ScrollTo('about', {offset: -175})">about</a></li>
+        <li><a onclick="new Effect.ScrollTo('portfolio', {offset: -110})">portfolio</a></li>
+        <li><a onclick="new Effect.ScrollTo('resume', {offset: -110})">resum&eacute;</a></li>
+        <li><a onclick="new Effect.ScrollTo('news', {offset: -110})">news</a></li>
+        <li><a onclick="new Effect.ScrollTo('contact', {offset: -110})">contact</a></li>
+    </ul>
+
+    <div id="pageContent">
+
+        <div id="about" class="area">
+            <img src="img/myphoto.gif" alt="My Photo" name="thePhoto" width="196" height="149" align="left" id="thePhoto" />
+            <p>In high school I found art and I found Photoshop. I worked hard to move to San Francisco to study New Media and to help me find my voice and express it. I found that there&#8217;s much more to life than pretty pictures and began honing my skills in graphic communication, motion graphics and programming. Versatility is key.</p>
+            <p> Through other jobs and self study I became proficient at these skills and can now adapt to practically any project. My specialty is programming for the web. I love working in a team, I love a challenge, and I love achieving the unexpected.</p>
+            <img src="img/signature.gif" alt="My Signature" name="theSignature" width="46" height="74" align="right" id="theSignature" />
+            <p>If you would like to work on any interesting projects or just want to chat, you can <script type="text/javascript" language="JavaScript">writeEAddress('contact me');</script>.</p>
+        </div>
+
+
+        <div id="portfolio" class="area">
+            <h2>portfolio <a onclick="new Effect.ScrollTo('page', {offset: -110})">top</a></h2>
+
+            <div id="portfolioPiece">
+                <div id="thePiece">
+                    <img src="img/frame-portfolio-xlg2.gif" alt="The Piece Frame" id="thePieceFrame" />
+                    <img src="img/screens/ss-home2.gif" alt="Home Image" id="thePieceImage" />
+                </div>
+            </div>
+
+            <ul id="portfolioLinks" class="portfolioSection">
+                <li class="header">Web</li>
+                <li><a href="#" onclick="theClick(0,this);return false;">Faucet Studio</a></li>
+                <li><a href="#" onclick="theClick(1,this);return false;">PeachKit.com</a></li>
+                <li><a href="#" onclick="theClick(2,this);return false;">re{NEW}</a></li>
+                <li><a href="#" onclick="theClick(22,this);return false;">lucidboy</a></li>
+                <li><a href="#" onclick="theClick(3,this);return false;">Transmitter</a></li>
+                <li><a href="#" onclick="theClick(4,this);return false;">Tommy Guerrero</a></li>
+                <li><a href="#" onclick="theClick(5,this);return false;">40deals.com</a></li>
+                <li><a href="#" onclick="theClick(6,this);return false;">VNC Tracker</a></li>
+                <li><a href="#" onclick="theClick(7,this);return false;">Fnot</a></li>
+                <li><a href="#" onclick="theClick(8,this);return false;">IdeasDatabase</a></li>
+
+                <li class="header">Interactive</li>
+                <li><a href="#" onclick="theClick(11,this);return false;">Fnot Type Feature</a></li>
+                <li><a href="#" onclick="theClick(12,this);return false;">Farallones</a></li>
+                <li><a href="#" onclick="theClick(13,this);return false;">Calder</a></li>
+                <li><a href="#" onclick="theClick(14,this);return false;">The Mars Volta</a></li>
+
+                <li class="header">Media</li>
+                <li><a href="#" onclick="theClick(20,this);return false;">Logos</a></li>
+                <li><a href="#" onclick="theClick(23,this);return false;">Conrad&#8217;s</a></li>
+                <li><a href="#" onclick="theClick(21,this);return false;">re{NEW}</a></li>
+                <li><a href="#" onclick="theClick(24,this);return false;">Icarus</a></li>
+                <li><a href="#" onclick="theClick(25,this);return false;">Fork in the Road</a></li>
+                <li><a href="#" onclick="theClick(26,this);return false;">Fonts</a></li>
+                <li><a href="#" onclick="theClick(27,this);return false;">Fonts 2</a></li>
+            </ul>
+
+      </div>
+
+
+        <div id="resume" class="area">
+            <h2>resume <a onclick="new Effect.ScrollTo('page', {offset: -110})">top</a></h2>
+
+            <div class="resumeSection">
+                <h3>Design</h3>
+                <ul>
+                    <li>Photoshop</li>
+                    <li>Illustrator</li>
+                    <li>InDesign</li>
+                    <li>Flash</li>
+                    <li>FontLab</li>
+                </ul>
+            </div>
+
+            <div class="resumeSection">
+                <h3>Programming</h3>
+                <ul>
+                    <li>Apache + MySQL + PHP</li>
+                    <li>Javascript + AJAX</li>
+                    <li>Subversion + Git</li>
+                    <li>Eclipse + Textmate</li>
+                    <li>Drupal + WordPress</li>
+                </ul>
+            </div>
+
+            <div class="resumeSection">
+                <h3>Video/Audio</h3>
+                <ul>
+                    <li>Final Cut Pro</li>
+                    <li>After Effects</li>
+                    <li>DVD Studio Pro</li>
+                    <li>Reason</li>
+                    <li>Cubase</li>
+                </ul>
+            </div>
+
+            <div class="resumeSection" id="URLs">
+                <h3>URLs</h3>
+                <ul>
+                    <li><a href="http://www.dogster.com" target="_blank">Dogster and Catster</a></li>
+                    <li><a href="http://www.togethertag.com" target="_blank">Together Tag</a></li>
+                    <li><a href="http://www.tommyguerrero.com" target="_blank">Tommy Guerrero</a></li>
+                    <li><a href="http://www.peachkit.com" target="_blank">PeachKit</a> <span class="pending">down</span></li>
+                    <li><a href="http://www.peachclass.com" target="_blank">PeachClass</a> <span class="pending">down</span></li>
+                    <li><a href="http://www.ideasdatabase.com">IdeasDatabase</a></li>
+                    <li><a href="http://www.fnot.com" target="_blank">Fnot</a></li>
+                </ul>
+            </div>
+
+            <p id="downloadSection">Download my <a href="files/paul_thrasher_resume.pdf" target="_blank">full resume <img src="img/icon-pdf2.gif" alt="My Resume PDF" width="43" height="44" id="myResumePdf" /></a>
+
+        </div>
+
+
+        <div id="contact" class="area">
+            <h2>contact <a onclick="new Effect.ScrollTo('page', {offset: -110})">top</a></h2>
+
+            <fieldset>
+                <legend>Go ahead and send me an email, I'd love to hear from you.</legend>
+                <span id="emailResponse">Send me an email, will ya?</span>
+
+                <form name="emailSend" id="emailSend" method="post" action="/contact" onsubmit="new Ajax.Updater('emailResponse','/contact', {asynchronous:true, parameters:Form.serialize(this)});new Effect.BlindUp('emailSend');return false;">
+                    <input type="checkbox" name="imaspmer" id="imaspmer" value="1" />
+
+                    <p><label for="name">Name</label><br />
+                    <input name="name" required="true" class="inputFields required" id="name" size="30" maxlength="60" type="text" /></p>
+
+                    <p><label for="email">Email</label><br />
+                    <input name="email" required="true" class="inputFields required validate-email" id="email" size="30" maxlength="80" type="text" /></p>
+
+                    <p><label for="message">Message</label><br />
+                    <textarea name="message" required="true" cols="30" rows="4" class="inputFields required" id="message"></textarea></p>
+
+                    <p><input name="submit" class="inputFields" id="submit" type="submit" value="Send" /></p>
+                </form>
+            </fieldset>
+        </div>
+
+    </div>
+
+    <div class="hide">
+        <a href="#" onclick="new Effect.ScrollTo('page')">Back To Top</a>
+    </div>
+
+    <div id="pageFooter">
+        <p>All works &copy; 2004-2016 Paul Thrasher.<br />
+        Thanks for visiting! If you have any questions, feel free to <script type="text/javascript">writeEAddress('contact me');</script>.</p>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+$('imaspmer').hide();
+var pageTracker = _gat._getTracker("UA-55560-6");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>

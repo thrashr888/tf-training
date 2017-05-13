@@ -1,0 +1,54 @@
+localhost:2020 {
+
+  # content
+  ext .html
+  templates
+
+  # meta
+  gzip
+  log access.log {
+    rotate {
+      size 100 # Rotate after 100 MB
+      age  14  # Keep log files for 14 days
+      keep 10  # Keep at most 10 log files
+    }
+  }
+
+  # debug
+  browse # /debug/pprof
+  #pprof
+  #expvar /stats
+  prometheus localhost:9180
+
+  # admin
+  root      public           # the folder where Hugo generates the website
+  # basicauth /admin pthrasher 4504 # protect the admin area using HTTP basic auth
+  # hugo ./site {
+  # }
+
+  # send emails
+  # mailout /contact {
+  #     maillog  mail.log
+  #     errorlog mail.err.log
+
+  #     to  thrashr888@gmail.com
+
+  #     subject "Contact email from paulthrasher.com"
+  #     body ./mail.tpl.txt
+
+  #     username "thrashr888@gmail.com"
+  #     password "Cock/Ver10"
+  #     host     "smtp.gmail.com"
+  #     port     465
+
+  #     ratelimit_interval 1m
+  #     ratelimit_capacity 6
+  # }
+
+  # search
+  search ^/ {
+    # +path /static/docs
+    -path ^/admin/
+    -path robots.txt
+  }
+}

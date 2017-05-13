@@ -1,0 +1,25 @@
+https://vastermonster.com {
+
+  # TLS
+  tls thrashr888@gmail.com {
+      max_certs 10
+  }
+
+}
+localhost:8080, http://vastermonster.com {
+
+  # content
+  ext .html
+  templates
+
+  # meta
+  gzip
+  log access.log {
+    rotate {
+      size 100 # Rotate after 100 MB
+      age  14  # Keep log files for 14 days
+      keep 10  # Keep at most 10 log files
+    }
+  }
+
+}
