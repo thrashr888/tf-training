@@ -8,8 +8,13 @@ terraform {
 
 provider "atlas" {}
 
-data "atlas_artifact" "web" {
-  name  = "pthrasher/web"
+data "atlas_artifact" "vastermonster" {
+  name  = "pthrasher/vastermonster"
+  type  = "amazon.image"
+  build = "latest"
+}
+data "atlas_artifact" "paulthrasher" {
+  name  = "pthrasher/paulthrasher"
   type  = "amazon.image"
   build = "latest"
 }
@@ -43,13 +48,13 @@ resource "aws_instance" "web_old" {
 }
 
 resource "aws_eip" "vpc1" {
-  instance = "${aws_instance.web.id}"
+  instance = "${aws_instance.vastermonster.id}"
   vpc      = true
 }
 
-resource "aws_instance" "web" {
-  ami                    = "${data.atlas_artifact.web.metadata_full.region-us-east-1}"
-  instance_type          = "t2.micro"
+resource "aws_instance" "vastermonster" {
+  ami                    = "${data.atlas_artifact.vastermonster.metadata_full.region-us-east-1}"
+  instance_type          = "t2.nano"
   vpc_security_group_ids = ["${aws_default_security_group.default.id}"]
   key_name               = "${aws_key_pair.vastermonster.key_name}"
   subnet_id              = "${aws_subnet.MainA.id}"
@@ -60,7 +65,30 @@ resource "aws_instance" "web" {
   }
 
   tags {
-    Name  = "web-04-v1"
+    Name  = "vastermonster-01"
+    Owner = "Terraform"
+  }
+}
+
+resource "aws_eip" "vpc2" {
+  instance = "${aws_instance.paulthrasher.id}"
+  vpc      = true
+}
+
+resource "aws_instance" "paulthrasher" {
+  ami                    = "${data.atlas_artifact.paulthrasher.metadata_full.region-us-east-1}"
+  instance_type          = "t2.nano"
+  vpc_security_group_ids = ["${aws_default_security_group.default.id}"]
+  key_name               = "${aws_key_pair.vastermonster.key_name}"
+  subnet_id              = "${aws_subnet.MainA.id}"
+
+  connection {
+    user     = "ec2-user"
+    key_file = "~/.ssh/vastermonster.pem"
+  }
+
+  tags {
+    Name  = "paulthrasher-01"
     Owner = "Terraform"
   }
 }
@@ -88,6 +116,9 @@ output "web_old_ip" {
   value = "${aws_instance.web_old.public_ip}"
 }
 
-output "web_ip" {
-  value = "${aws_instance.web.public_ip}"
+output "vastermonster_ip" {
+  value = "${aws_instance.vastermonster.public_ip}"
+}
+output "paulthrasher_ip" {
+  value = "${aws_instance.paulthrasher.public_ip}"
 }

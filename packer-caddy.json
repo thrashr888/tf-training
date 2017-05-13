@@ -1,6 +1,6 @@
 {
     "variables": {
-        "SOURCE_AMI": "ami-ff790fe9",
+        "SOURCE_AMI": "ami-80861296",
         "ATLAS_TOKEN": "{{ env `ATLAS_TOKEN` }}",
         "AWS_ACCESS_KEY_ID": "{{ env `AWS_ACCESS_KEY_ID` }}",
         "AWS_SECRET_ACCESS_KEY": "{{ env `AWS_SECRET_ACCESS_KEY` }}",
@@ -8,16 +8,17 @@
         "AWS_SUBNET_ID": "subnet-1523252f",
         "AWS_REGION": "us-east-1",
         "AWS_SECURITY_GROUP_ID": "sg-ac29cfc5",
-        "APP_NAME": "Vastermonster",
-        "APP_OWNER": "pthrasher"
+        "APP_NAME": "caddy",
+        "APP_OWNER": "pthrasher",
+        "CADDY_VERSION": "0.10.2"
     },
     "builders": [
         {
             "type": "amazon-ebs",
-            "access_key": "{{user `AWS_ACCESS_KEY_ID`}}",
-            "secret_key": "{{user `AWS_SECRET_ACCESS_KEY`}}",
-            "region": "{{user `AWS_REGION`}}",
-            "source_ami": "{{user `SOURCE_AMI`}}",
+            "access_key": "{{ user `AWS_ACCESS_KEY_ID` }}",
+            "secret_key": "{{ user `AWS_SECRET_ACCESS_KEY` }}",
+            "region": "{{ user `AWS_REGION` }}",
+            "source_ami": "{{ user `SOURCE_AMI` }}",
             "instance_type": "t2.micro",
             "ssh_username": "ec2-user",
             "ssh_timeout": "7m",
@@ -48,27 +49,26 @@
         {
             "type": "shell",
             "inline": [
-                "sudo mkdir -p /tmp/vastermonster",
-                "sudo chown -R ec2-user /tmp/vastermonster"
-            ]
-        },
-        {
-            "type": "file",
-            "source": "./",
-            "destination": "/tmp/vastermonster"
-        },
-        {
-            "type": "shell",
-            "inline": [
-                "test -f /tmp/vastermonster/.git && sudo rm /tmp/vastermonster/.git || true"
-            ]
-        },
-        {
-            "type": "shell",
-            "inline": [
-                "sudo mkdir -p /opt/vastermonster",
-                "sudo chown -R ec2-user /opt/vastermonster",
-                "cp -r /opt/vastermonster/. /tmp/vastermonster"
+                "wget https://github.com/mholt/caddy/releases/download/{{ user `CADDY_VERSION` }}/caddy_{{ user `CADDY_VERSION` }}_linux_386.tar.gz",
+                "tar -xvf caddy_{{ user `CADDY_VERSION` }}_linux_386.tar.gz",
+                "sudo cp caddy_{{ user `CADDY_VERSION` }}_linux_386/caddy  /usr/local/bin",
+                "sudo chown root:root /usr/local/bin/caddy",
+                "sudo chmod 755 /usr/local/bin/caddy",
+
+                "sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/caddy",
+                
+                "sudo groupadd -g 33 www-data",
+                "sudo useradd -g www-data --no-user-group --home-dir /var/www --no-create-home --shell /usr/sbin/nologin --system --uid 33 www-data",
+
+                "sudo mkdir /etc/caddy",
+                "sudo chown -R root:www-data /etc/caddy",
+                "sudo mkdir /etc/ssl/caddy",
+                "sudo chown -R www-data:root /etc/ssl/caddy",
+                "sudo chmod 0770 /etc/ssl/caddy",
+
+                "sudo mkdir /var/www",
+                "sudo chown www-data:www-data /var/www",
+                "sudo chmod 555 /var/www"
             ]
         }
     ],
@@ -76,7 +76,7 @@
         {
             "type": "atlas",
             "token": "{{ user `ATLAS_TOKEN` }}",
-            "artifact": "pthrasher/web",
+            "artifact": "pthrasher/caddy",
             "artifact_type": "amazon.image",
             "metadata": {
                 "created_at": "{{timestamp}}"

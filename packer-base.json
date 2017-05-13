@@ -1,6 +1,7 @@
 {
     "variables": {
-        "SOURCE_AMI": "ami-c58c1dd3",
+        "SOURCE_AMI": "ami-80861296",
+        "ATLAS_TOKEN": "{{ env `ATLAS_TOKEN` }}",
         "AWS_ACCESS_KEY_ID": "{{ env `AWS_ACCESS_KEY_ID` }}",
         "AWS_SECRET_ACCESS_KEY": "{{ env `AWS_SECRET_ACCESS_KEY` }}",
         "AWS_VPC_ID": "vpc-1f595c7a",
@@ -42,7 +43,7 @@
         {
             "type": "shell",
             "inline": [
-                "sudo yum upgrade -y"
+                "sudo apt-get update -y"
             ]
         }
     ],
