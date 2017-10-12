@@ -8,16 +8,16 @@ terraform {
 
 provider "atlas" {}
 
-data "atlas_artifact" "vastermonster" {
-  name  = "pthrasher/vastermonster"
-  type  = "amazon.image"
-  build = "latest"
-}
-data "atlas_artifact" "paulthrasher" {
-  name  = "pthrasher/paulthrasher"
-  type  = "amazon.image"
-  build = "latest"
-}
+#data "atlas_artifact" "vastermonster" {
+#  name  = "pthrasher/vastermonster"
+#  type  = "amazon.image"
+#  build = "latest"
+#}
+#data "atlas_artifact" "paulthrasher" {
+#  name  = "pthrasher/paulthrasher"
+#  type  = "amazon.image"
+#  build = "latest"
+#}
 
 provider "aws" {
   region = "us-east-1"
