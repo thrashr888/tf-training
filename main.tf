@@ -53,7 +53,7 @@ resource "aws_eip" "vpc1" {
 }
 
 resource "aws_instance" "vastermonster" {
-  ami                    = "${data.atlas_artifact.vastermonster.metadata_full.region-us-east-1}"
+  ami                    = "ami-23a12835"
   instance_type          = "t2.nano"
   vpc_security_group_ids = ["${aws_default_security_group.default.id}"]
   key_name               = "${aws_key_pair.vastermonster.key_name}"
@@ -76,7 +76,7 @@ resource "aws_eip" "vpc2" {
 }
 
 resource "aws_instance" "paulthrasher" {
-  ami                    = "${data.atlas_artifact.paulthrasher.metadata_full.region-us-east-1}"
+  ami                    = "ami-23a12835"
   instance_type          = "t2.nano"
   vpc_security_group_ids = ["${aws_default_security_group.default.id}"]
   key_name               = "${aws_key_pair.vastermonster.key_name}"
